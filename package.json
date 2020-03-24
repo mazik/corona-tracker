@@ -2,7 +2,7 @@
   "name": "corona-tracker",
   "version": "1.0.0",
   "description": "A Google Chrome extension for tracking CORONAVIRUS COVID-19 DATA",
-  "main": "manifest.js",
+  "main": "src/manifest.js",
   "repository": "https://github.com/mazik/corona-tracker",
   "author": {
     "name": "Md Mazedul Islam Khan",
@@ -18,6 +18,10 @@
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "laravel-mix": "^5.0.4"
+    "laravel-mix": "^5.0.4",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.2.0"
   }
 }
