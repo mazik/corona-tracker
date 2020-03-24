@@ -1,0 +1,14 @@
+{
+  "name": "corona-tracker",
+  "version": "1.0.0",
+  "description": "A Google Chrome extension for tracking CORONAVIRUS COVID-19 DATA",
+  "main": "manifest.js",
+  "repository": "https://github.com/mazik/corona-tracker",
+  "author": {
+    "name": "Md Mazedul Islam Khan",
+    "email": "mazedulislamkhan@gmail.com",
+    "url": "https://twitter.com/iamazik"
+  },
+  "private": true,
+  "license": "MIT"
+}
