@@ -124,3 +124,6 @@ dist
 *.code-workspace
 
 dist/
+publish/
+key.pem
+package-lock.json
