@@ -18,32 +18,37 @@
       </h1>
     </header>
     <main class="p-4 pb-0">
+      <div id="loader" class="block w-full h-full fixed left-0 bg-white text-gray-700">
+        <svg class="w-4 h-4 absolute fill-current animation-spin animation-linear" style="top: 45%; left: 48%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+          <path d="M5.516 14.224c-2.262-2.432-2.222-6.244.128-8.611a6.074 6.074 0 013.414-1.736L8.989 1.8a8.112 8.112 0 00-4.797 2.351c-3.149 3.17-3.187 8.289-.123 11.531l-1.741 1.752 5.51.301-.015-5.834-2.307 2.323zm6.647-11.959l.015 5.834 2.307-2.322c2.262 2.434 2.222 6.246-.128 8.611a6.07 6.07 0 01-3.414 1.736l.069 2.076a8.122 8.122 0 004.798-2.35c3.148-3.172 3.186-8.291.122-11.531l1.741-1.754-5.51-.3z"/>
+        </svg>
+      </div>
       <div class="flex flex-col">
         <canvas id="chart"></canvas>
         <div class="mx-auto">
           <div class="flex items-center py-2">
             <div class="w-4 h-4 rounded bg-red-500"></div>
-            <p class="ml-1 text-gray-700 text-sm">Deaths: 123</p>
+            <p class="ml-1 text-gray-700 text-sm">Deaths: <span id="location-deaths"></span></p>
           </div>
           <div class="flex items-center py-2">
             <div class="w-4 h-4 rounded bg-green-500"></div>
-            <p class="ml-1 text-gray-700 text-sm">Recovered: 456</p>
+            <p class="ml-1 text-gray-700 text-sm">Recovered: <span id="location-recovered"></span></p>
           </div>
           <div class="flex items-center py-2">
             <div class="w-4 h-4 rounded bg-yellow-500"></div>
-            <p class="ml-1 text-gray-700 text-sm">Confirmed: 789</p>
+            <p class="ml-1 text-gray-700 text-sm">Confirmed: <span id="location-confirmed"></span></p>
           </div>
         </div>
       </div>
       <div>
         <h2 class="p-2 text-gray-700">Latest global updates</h2>
-        <div class="flex justify-between flex-wrap px-4 bg-gray-100 rounded">
+        <div class="flex justify-between px-2 bg-gray-100 rounded">
           <div class="flex items-center text-red-500">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
               <path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10a10 10 0 0010-10c0-5.53-4.5-10-10-10m0 18a8 8 0 01-8-8 8 8 0 018-8 8 8 0 018 8 8 8 0 01-8 8m4.18-12.24l-1.06 1.06-1.06-1.06L13 8.82l1.06 1.06L13 10.94 14.06 12l1.06-1.06L16.18 12l1.06-1.06-1.06-1.06 1.06-1.06-1.06-1.06M7.82 12l1.06-1.06L9.94 12 11 10.94 9.94 9.88 11 8.82 9.94 7.76 8.88 8.82 7.82 7.76 6.76 8.82l1.06 1.06-1.06 1.06L7.82 12M12 14c-2.33 0-4.31 1.46-5.11 3.5h10.22c-.8-2.04-2.78-3.5-5.11-3.5z"/>
             </svg>
             <div class="ml-1">
-              <h3 class="text-lg font-bold">123</h3>
+              <h3 id="global-deaths" class="text-lg font-bold"></h3>
               <p class="text-xs">Deaths</p>
             </div>
           </div>
@@ -52,7 +57,7 @@
               <path d="M15 6h7v3h-4v4h-4v4h-4v4H3v-3h4v-4h4v-4h4V6m-4.83.66l-5.51 5.51-1.83-1.83 5.51-5.51L6.5 3H12v5.5l-1.83-1.84z"/>
             </svg>
             <div class="ml-1">
-              <h3 class="text-lg font-bold">456</h3>
+              <h3 id="global-confirmed" class="text-lg font-bold"></h3>
               <p class="text-xs">Confirmed</p>
             </div>
           </div>
@@ -61,19 +66,19 @@
               <path d="M15 6h7v3h-4v4h-4v4h-4v4H3v-3h4v-4h4v-4h4V6M4.83 8.34l5.51-5.51 1.83 1.83-5.51 5.51L8.5 12H3V6.5l1.83 1.84z"/>
             </svg>
             <div class="ml-1">
-              <h3 class="text-lg font-bold">789</h3>
+              <h3 id="global-recovered" class="text-lg font-bold"></h3>
               <p class="text-xs">Recovered</p>
             </div>
           </div>
         </div>
         <div class="py-2">
           <p class="text-gray-700">Total 81591 cases on China and 337087 on the other location</p>
-          <p class="text-gray-700 italic text-right">Tue Mar 24 2020</p>
+          <p id="date" class="text-gray-700 italic text-right"></p>
         </div>
       </div>
     </main>
     <footer class="p-1 bg-gray-300">
-      <p class="text-gray-700 text-center underline">Bangladesh</p>
+      <p id="country" class="text-gray-700 text-center underline"></p>
     </footer>
   </section>
 
