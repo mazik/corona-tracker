@@ -14,14 +14,14 @@ let mix = require('laravel-mix');
 // Disable mix-manifest.json
 Mix.manifest.refresh = _ => void 0
 
- mix.js('src/js/background.js', 'js')
-    .js('src/js/content.js', 'js')
-    .js('src/js/popup.js', 'js')
-    .postCss('src/css/popup.css', 'css', [require('tailwindcss')])
-    .copy('src/view/popup.html', 'dist')
-    .copyDirectory('src/icon', 'dist/icon')
-    .copy('src/manifest.json', 'dist')
-    .setPublicPath('dist')
+mix.js('src/js/background.js', 'js')
+  .js('src/js/content.js', 'js')
+  .js('src/js/popup.js', 'js')
+  .postCss('src/css/popup.css', 'css', [require('tailwindcss')])
+  .copy('src/view/popup.html', 'dist')
+  .copyDirectory('src/icon', 'dist/icon')
+  .copy('src/manifest.json', 'dist')
+  .setPublicPath('dist')
 
 // mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
 
