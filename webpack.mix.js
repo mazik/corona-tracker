@@ -20,6 +20,7 @@ mix.js('src/js/background.js', 'js')
   .postCss('src/css/popup.css', 'css', [require('tailwindcss')])
   .copy('src/view/popup.html', 'dist')
   .copyDirectory('src/icon', 'dist/icon')
+  .copy('src/icon/icon.png', 'dist')
   .copy('src/manifest.json', 'dist')
   .setPublicPath('dist')
 
