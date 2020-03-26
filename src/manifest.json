@@ -18,7 +18,6 @@
     "48": "icon/corona@48.png",
     "128": "icon/corona@128.png"
   },
-  "permissions": ["storage"],
   "background": {
     "scripts": ["js/background.js"],
     "persistent": false
