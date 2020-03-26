@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">Corona Tracker</h1>
-A Google Chrome extension for tracking COVIDVIRUS - COVID-19 update
+<p align="center">A Google Chrome extension for tracking COVIDVIRUS - COVID-19 update</p>
 
 ## Introduction
 Corona Tracker is developed by using the [COVID-19 API](https://github.com/mathdroid/covid-19-api) to see the latest update about the CORONAVIRUS - COVID-19. It was previously designed for OS level [CORONA: COVID-19](https://github.com/mazik/corona/) using Electron but there was some OS specific issue and code signing hasn't been done.
