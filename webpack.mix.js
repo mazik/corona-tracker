@@ -16,11 +16,10 @@ Mix.manifest.refresh = _ => void 0
 
 mix.js('src/js/popup.js', 'js')
   .postCss('src/css/popup.css', 'css', [require('tailwindcss')])
-  .copy('src/view/popup.html', 'dist')
-  .copyDirectory('src/icon', 'dist/icon')
-  .copy('src/icon/icon.png', 'dist')
-  .copy('src/manifest.json', 'dist')
-  .setPublicPath('dist')
+  .copy('src/view/popup.html', 'firefox-dist')
+  .copyDirectory('src/icons', 'firefox-dist/icons')
+  .copy('src/manifest.json', 'firefox-dist')
+  .setPublicPath('firefox-dist')
 
 // mix.js('src/app.js', 'dist/').sass('src/app.scss', 'dist/');
 

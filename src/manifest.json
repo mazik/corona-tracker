@@ -1,21 +1,16 @@
 {
   "name": "CORONAVIRUS - COVID-19",
   "version": "1.0",
-  "description": "A Google Chrome extension for tracking CORONAVIRUS COVID-19 update",
+  "description": "A Mozilla Firefox extension for tracking CORONAVIRUS COVID-19 update",
+  "homepage_url": "https://github.com/mazik/corona-tracker/tree/firefox/",
   "manifest_version": 2,
   "browser_action": {
-    "default_icon": {
-      "16": "icon/corona@16.png",
-      "32": "icon/corona@32.png",
-      "48": "icon/corona@48.png",
-      "128": "icon/corona@128.png"
-    },
-    "default_popup": "popup.html"
+    "default_icon": "icons/border-32.png",
+    "default_title": "CORONAVIRUS - COVID-19",
+    "default_popup": "popup.html",
+    "browser_style": true
   },
   "icons": {
-    "16": "icon/corona@16.png",
-    "32": "icon/corona@32.png",
-    "48": "icon/corona@48.png",
-    "128": "icon/corona@128.png"
+    "48": "icons/border-48.png"
   }
 }
