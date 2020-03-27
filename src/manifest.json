@@ -17,18 +17,5 @@
     "32": "icon/corona@32.png",
     "48": "icon/corona@48.png",
     "128": "icon/corona@128.png"
-  },
-  "background": {
-    "scripts": ["js/background.js"],
-    "persistent": false
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "match_about_blank": true,
-      "run_at": "document_start",
-      "all_frames": true,
-      "js": ["js/content.js"]
-    }
-  ]
+  }
 }
