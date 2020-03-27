@@ -75,7 +75,7 @@ country.get().then(region => {
           doughnutlabel: {
             labels: [
               {
-                text: locationDeaths + locationConfirmed + locationRecovered,
+                text: locationConfirmed,
                 font: {
                   size: '30',
                 },
