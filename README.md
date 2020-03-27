@@ -1,14 +1,16 @@
 <p align="center">
-  <img src="/src/icon/icon.png" width="128" title="Corona Tracker" alt="Corona Tracker">
+  <img src="/src/icons/border-96.png" title="Corona Tracker" alt="Corona Tracker">
 </p>
 
 <h1 align="center">Corona Tracker</h1>
-<p align="center">A Google Chrome extension for tracking COVIDVIRUS - COVID-19 update</p>
+<p align="center">A Mozilla Firefox extension for tracking COVIDVIRUS - COVID-19 update</p>
 
 ## Introduction
 Corona Tracker is developed by using the [COVID-19 API](https://github.com/mathdroid/covid-19-api) to see the latest update about the CORONAVIRUS - COVID-19. It was previously designed for OS level [CORONA: COVID-19](https://github.com/mazik/corona/) using Electron but there was some OS specific issue and code signing hasn't been done.
 
 So, Corona Tracker was introduced as a Google Chrome extension so there's no more OS specific issue and can be run any operating system as long as you're running Google Chrome.
+
+Last but not least, the extension is now available for Mozilla Firefox :)
 
 ## Interface
 The interafce is developed by using the [Tailwind CSS](https://tailwindcss.com) to make it light and simple.
@@ -17,7 +19,7 @@ The interafce is developed by using the [Tailwind CSS](https://tailwindcss.com) 
 </p>
 
 ## Features
-I have always wanted to make a Google Chrome extension for learning purpose. So, I did it this time when I am in the home quarantine due to the CORONAVIRUS - COVID-19.
+I have always wanted to make a Mozilla Firefox extension for learning purpose. So, I did it this time when I am in the home quarantine due to the CORONAVIRUS - COVID-19.
 
  - Total deaths
  - Total reported case
@@ -30,13 +32,13 @@ I have always wanted to make a Google Chrome extension for learning purpose. So,
  - Refresh data automatically to get the most recent update
 
  ## Installation
-Google Chrome executable `.crx` file has been submitted to Chrome webstore and is pending for review since the app is using Chrome `broadHost` permission to switch icon between light and dark mode. Once the review is completed, you can install it directly from the Chrome Webstore. In the meantime, please perform the following steps:
+Mozilla Firefox executable file has been submitted to Firefox addon marketplace and is pending for review since the the extension uses code bundler `webpack`. Once the review is completed, you can install it directly from the Firefox addon marketplace. In the meantime, please perform the following steps:
   - Clone the repository
   - Run `yarn install` to install all the dependencies
-  - Run `yarn production` that will create a `dist` directory inside the project
-  - Go to Chrome Extensions from your browser settings
-  - Enable Developer mode from the top right corner of the Extensions page
-  - Use Load unpacked option to select the generated `dist` directory
+  - Run `yarn build:firefox` that will create a `web-ext-artifacts` directory inside the project and the zip file of the extension build.
+  - Go to `about:debugging` from your Firefox address bar
+  - Go to the `This Firefox` menu from the left navigation on the debugging page
+  - Use the `Load Temporary Add-on` button to select the generated `web-ext-artifacts/coronavirus_-_covid-19-11.0.zip` file
 
 ## Project setup
 ```shell
@@ -61,4 +63,9 @@ yarn test
 ### Run test and hot-reloads for development
 ```shell
 yarn tdd
+```
+
+### Build for Mozilla Firefox
+```shell
+yarn build:firefox
 ```
