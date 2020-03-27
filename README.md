@@ -30,13 +30,21 @@ I have always wanted to make a Google Chrome extension for learning purpose. So,
  - Refresh data automatically to get the most recent update
 
  ## Installation
-Google Chrome executable `.crx` file has been submitted to Chrome webstore and is pending for review since the app is using Chrome `broadHost` permission to switch icon between light and dark mode. Once the review is completed, you can install it directly from the Chrome Webstore. In the meantime, please perform the following steps:
-  - Clone the repository
-  - Run `yarn install` to install all the dependencies
-  - Run `yarn production` that will create a `dist` directory inside the project
-  - Go to Chrome Extensions from your browser settings
-  - Enable Developer mode from the top right corner of the Extensions page
-  - Use Load unpacked option to select the generated `dist` directory
+  - From Google [Chrome Webstore](https://chrome.google.com/webstore/)
+    - Go to the [CORONAVIRUS - COVID-19 Chrome Webstore page](https://chrome.google.com/webstore/detail/coronavirus-covid-19/ikijbjphceaapcgigpdejijgphdcnide/?fbclid=IwAR23UjDqwo7kFBprDoKJyg4RkRyCCg2kGR0_lUoRX7bifKTcQnJnhxRfex0) and install it from Google Chrome.
+
+  - Manual Installation
+    - Clone the repository
+    - Run `yarn install` to install all the dependencies
+    - Run `yarn production` that will create a `dist` directory inside the project
+    - Go to Chrome Extensions from your browser settings
+    - Enable Developer mode from the top right corner of the Extensions page
+    - Use Load unpacked option to select the generated `dist` directory
+
+## Note
+  There's a difference between the code in the `master` branch and `webstore` branch. When the `master` branch was submitted to Google Chrome webstore, it was pending for a review and it was quite a long time. This is because of the `broadHost` permission on the `content.js` that requires to switch extesion icon between the browser light and dark mode.
+
+  Since the review process was taking so long, I decided to remove the relevant feature that also removed the `broadHost` permission. This is how the extension is now live on Google Chrome webstore. If everything goes fine, I might add the relevant feature again in a future update.
 
 ## Project setup
 ```shell
