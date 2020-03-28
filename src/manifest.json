@@ -1,6 +1,6 @@
 {
   "name": "CORONAVIRUS - COVID-19",
-  "version": "1.0",
+  "version": "1.1",
   "description": "A Mozilla Firefox extension for tracking CORONAVIRUS COVID-19 update",
   "homepage_url": "https://github.com/mazik/corona-tracker/tree/firefox/",
   "manifest_version": 2,

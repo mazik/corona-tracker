@@ -32,13 +32,17 @@ I have always wanted to make a Mozilla Firefox extension for learning purpose. S
  - Refresh data automatically to get the most recent update
 
  ## Installation
-Mozilla Firefox executable file has been submitted to Firefox addon marketplace and is pending for review since the the extension uses code bundler `webpack`. Once the review is completed, you can install it directly from the Firefox addon marketplace. In the meantime, please perform the following steps:
-  - Clone the repository
-  - Run `yarn install` to install all the dependencies
-  - Run `yarn build:firefox` that will create a `web-ext-artifacts` directory inside the project and the zip file of the extension build.
-  - Go to `about:debugging` from your Firefox address bar
-  - Go to the `This Firefox` menu from the left navigation on the debugging page
-  - Use the `Load Temporary Add-on` button to select the generated `web-ext-artifacts/coronavirus_-_covid-19-11.0.zip` file
+  - Firefox Addons marketplace
+    CORONAVIRUS - COVID-19 extension is currently available in the [Firefox browser add-ons marketplace](https://addons.mozilla.org/en-US/firefox/addon/coronavirus-covid-19/). You can simple install it from the relevant extension page.
+
+  - Manual installation
+    - Clone the repository `git clone git@github.com:mazik/corona-tracker.git`
+    - Run `yarn install` to install all the dependencies
+    - Run `yarn production` for the production and minified build
+    - Run `yarn build:firefox` that will create a `web-ext-artifacts` directory inside the project and the zip file of the extension build.
+    - Go to `about:debugging` from your Firefox address bar
+    - Go to the `This Firefox` menu from the left navigation on the debugging page
+    - Use the `Load Temporary Add-on` button to select the generated `web-ext-artifacts/coronavirus_-_covid-19-11.0.zip` file
 
 ## Project setup
 ```shell

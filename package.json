@@ -1,7 +1,7 @@
 {
   "name": "corona-tracker",
-  "version": "1.0.0",
-  "description": "A Google Chrome extension for tracking CORONAVIRUS COVID-19 DATA",
+  "version": "1.1.0",
+  "description": "A Mozilla Firefox extension for tracking CORONAVIRUS COVID-19 DATA",
   "main": "src/manifest.js",
   "repository": "https://github.com/mazik/corona-tracker",
   "author": {
@@ -18,7 +18,7 @@
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "test": "NODE_ENV=test jest",
     "tdd": "NODE_ENV=test jest --watch --notify",
-    "build:firefox": "web-ext build --source-dir ./src/"
+    "build:firefox": "web-ext build --source-dir ./firefox-dist/"
   },
   "devDependencies": {
     "babel-jest": "^25.2.0",
