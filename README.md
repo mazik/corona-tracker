@@ -41,6 +41,9 @@ I have always wanted to make a Google Chrome extension for learning purpose. So,
     - Enable Developer mode from the top right corner of the Extensions page
     - Use Load unpacked option to select the generated `dist` directory
 
+## Mozilla Firefox
+  Don't worry if you are running Mozilla Firefox as the CORONAVIRUS - COVID-19 extension is now also available for Mozilla Firefox. You can find it in the `firefox` [branch](https://github.com/mazik/corona-tracker/tree/firefox) or directly from the [Mozilla Firefox Add-ons marketplace](https://addons.mozilla.org/en-US/firefox/addon/coronavirus-covid-19/).
+
 ## Note
   There's a difference between the code in the `master` branch and `webstore` branch. When the `master` branch was submitted to Google Chrome webstore, it was pending for a review and it was quite a long time. This is because of the `broadHost` permission on the `content.js` that requires to switch extesion icon between the browser light and dark mode.
 
