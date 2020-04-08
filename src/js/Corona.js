@@ -35,4 +35,14 @@ export default class Corona {
             })
     }
 
+    static todayLocationWordometer(countryCode) {
+        return fetch(`https://corona.lmao.ninja/countries/${countryCode.toLowerCase()}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json().then(json => json)
+                }
+
+                throw new Error("Couldn't get global updates upto today")
+            })
+    }
 }
