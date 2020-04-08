@@ -74,3 +74,10 @@ yarn test
 ```shell
 yarn tdd
 ```
+
+Contributors
+-------------------------------------
+
+* **[Md Alauddin Al-Amin (Shakeel)](https://github.com/alaminshakeel)**
+   * Fixed total global recovered counter
+   * Extended for Multiple Country information rendering
