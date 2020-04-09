@@ -13,8 +13,7 @@ So, Corona Tracker was introduced as a Google Chrome extension so there's no mor
 ## Interface
 The interafce is developed by using the [Tailwind CSS](https://tailwindcss.com) to make it light and simple.
 <p align="center">
-  <img src="Corona-Tracker-1.png" width="350" title="Corona Tracker" alt="Corona Tracker Chrome Extension">
-  <img src="Corona-Tracker-2.png" width="350" title="Corona Tracker" alt="Corona Tracker Chrome Extension">
+  <img src="Corona-Tracker.png" width="350" title="Corona Tracker" alt="Corona Tracker Chrome Extension">
 </p>
 
 ## Features
@@ -74,10 +73,3 @@ yarn test
 ```shell
 yarn tdd
 ```
-
-Contributors
--------------------------------------
-
-* **[Md Alauddin Al-Amin (Shakeel)](https://github.com/alaminshakeel)**
-   * Fixed total global recovered counter
-   * Extended for Multiple Country information rendering
