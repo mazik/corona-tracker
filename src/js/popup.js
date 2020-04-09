@@ -120,115 +120,121 @@ init();
 let renderAffectedCountry = (countryCode, countryName) => {
 
     // get latest global information from wordometer source api
-    corona.todayLocationWordometer(countryCode).then(affected => {
-
-        locationDeaths      = affected.deaths;          // no of deaths (upto now)
-        locationConfirmed   = affected.cases;           // no of confirmed cases
-        locationRecovered   = affected.recovered;       // no of recovered cases
-        locationNewDeaths   = affected.todayDeaths;     // no of new deaths today
+    // corona.todayLocationWordometer(countryCode).then(affected => {
+    //
+    //     locationDeaths      = affected.deaths;          // no of deaths (upto now)
+    //     locationConfirmed   = affected.cases;           // no of confirmed cases
+    //     locationRecovered   = affected.recovered;       // no of recovered cases
+    //     locationNewDeaths   = affected.todayDeaths;     // no of new deaths today
+    //
+    // })
+    corona.location(countryCode).then(affected => {
+        locationDeaths      = affected.deaths.value;        // no of deaths (upto now)
+        locationConfirmed   = affected.confirmed.value;     // no of confirmed cases
+        locationRecovered   = affected.recovered.value;     // no of recovered cases
 
     })
-        .then(() => {
+    .then(() => {
 
-            // render country name
-            const location                      = document.getElementById('country');
-            location.innerText                  = countryName;
+        // render country name
+        const location                      = document.getElementById('country');
+        location.innerText                  = countryName;
 
-            // render number of deaths
-            const currentLocationDeaths         = document.getElementById('location-deaths');
-            currentLocationDeaths.innerText     = locationDeaths;
+        // render number of deaths
+        const currentLocationDeaths         = document.getElementById('location-deaths');
+        currentLocationDeaths.innerText     = locationDeaths;
 
-            // const currentLocationNewDeaths      = document.getElementById('location-new-deaths');
-            // currentLocationNewDeaths.innerText  =  locationNewDeaths;
+        // const currentLocationNewDeaths      = document.getElementById('location-new-deaths');
+        // currentLocationNewDeaths.innerText  =  locationNewDeaths;
 
-            // render number of recovered
-            const currentLocationRecovered      = document.getElementById('location-recovered');
-            currentLocationRecovered.innerText  = locationRecovered;
+        // render number of recovered
+        const currentLocationRecovered      = document.getElementById('location-recovered');
+        currentLocationRecovered.innerText  = locationRecovered;
 
-            // render number of confirmed cases
-            const currentLocationConfirmed      = document.getElementById('location-confirmed');
-            currentLocationConfirmed.innerText  = locationConfirmed;
+        // render number of confirmed cases
+        const currentLocationConfirmed      = document.getElementById('location-confirmed');
+        currentLocationConfirmed.innerText  = locationConfirmed;
 
-        })
-        .then(() => {
+    })
+    .then(() => {
 
-            // check chart is already defined
-            if (statChart === undefined ) {
+        // check chart is already defined
+        if (statChart === undefined ) {
 
-                // init chart with value of deaths,cases & recovered number
-                const ctx = document.getElementById('chart');
-                statChart = new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Deaths', 'Confirmed', 'Recovered'],
-                        datasets: [{
-                            data: [
-                                locationConfirmed,
-                                locationRecovered,
-                                locationDeaths,
-                            ],
-                            backgroundColor: [
-                                '#ECC94B',
-                                '#48BB78',
-                                '#F56565',
-                            ],
-                        }],
+            // init chart with value of deaths,cases & recovered number
+            const ctx = document.getElementById('chart');
+            statChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Deaths', 'Confirmed', 'Recovered'],
+                    datasets: [{
+                        data: [
+                            locationConfirmed,
+                            locationRecovered,
+                            locationDeaths,
+                        ],
+                        backgroundColor: [
+                            '#ECC94B',
+                            '#48BB78',
+                            '#F56565',
+                        ],
+                    }],
+                },
+                options: {
+                    tooltips: {
+                        enabled: false
                     },
-                    options: {
-                        tooltips: {
-                            enabled: false
-                        },
-                        hover: {
-                            mode: null
-                        },
-                        legend: {
-                            display: false
-                        },
-                        cutoutPercentage: 60,
-                        plugins: {
-                            doughnutlabel: {
-                                labels: [
-                                    {
-                                        text: locationDeaths + locationConfirmed + locationRecovered,
-                                        font: {
-                                            size: '30',
-                                        },
+                    hover: {
+                        mode: null
+                    },
+                    legend: {
+                        display: false
+                    },
+                    cutoutPercentage: 60,
+                    plugins: {
+                        doughnutlabel: {
+                            labels: [
+                                {
+                                    text: locationDeaths + locationConfirmed + locationRecovered,
+                                    font: {
+                                        size: '30',
                                     },
-                                    {
-                                        text: 'Cases reported',
-                                        font: {
-                                            size: '15'
-                                        }
+                                },
+                                {
+                                    text: 'Cases reported',
+                                    font: {
+                                        size: '15'
                                     }
-                                ]
-                            }
+                                }
+                            ]
                         }
                     }
-                })
-            }
-            else {
+                }
+            })
+        }
+        else {
 
-                // update numbers if already initialized
-                statChart.data.datasets[0].data[0] = locationConfirmed;
-                statChart.data.datasets[0].data[1] = locationRecovered;
-                statChart.data.datasets[0].data[2] = locationDeaths;
-                statChart.options.plugins.doughnutlabel.labels[0].text = locationDeaths + locationConfirmed + locationRecovered;
-                statChart.update();
-            }
-
-
-        })
-        .then(() => {
+            // update numbers if already initialized
+            statChart.data.datasets[0].data[0] = locationConfirmed;
+            statChart.data.datasets[0].data[1] = locationRecovered;
+            statChart.data.datasets[0].data[2] = locationDeaths;
+            statChart.options.plugins.doughnutlabel.labels[0].text = locationDeaths + locationConfirmed + locationRecovered;
+            statChart.update();
+        }
 
 
-            // finally remove the loader to show the output
-            const loader = document.getElementById('loader');
-            loader.classList.add('hidden');
+    })
+    .then(() => {
 
-            // close the sidebar before loader disappear
-            slideToggle(false);
-        })
-        .catch(error => alert(error))
+
+        // finally remove the loader to show the output
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+
+        // close the sidebar before loader disappear
+        slideToggle(false);
+    })
+    .catch(error => alert(error))
 };
 
 // event driven operation handling
