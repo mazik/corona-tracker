@@ -87,8 +87,6 @@ let init = () => {
 init();       // calling the strap to boot.
 
 let renderAffectedCountry = (countryCode, countryName) => {     // function definition to get specific country
-
-
   corona.location(countryCode).then(affected => {               // get latest global information from wordometer source api
     locationDeaths = affected.deaths.value;                     // no of deaths (upto now)
     locationConfirmed = affected.confirmed.value;               // no of confirmed cases
