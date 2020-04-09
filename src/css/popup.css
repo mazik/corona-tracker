@@ -4,15 +4,15 @@
 
 /* customize scrollbar */
 #countryUL::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 #countryUL::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 #countryUL::-webkit-scrollbar-thumb {
-    background-color: darkgrey;
-    outline: 1px solid slategrey;
-    border-radius: 25px;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 25px;
 }
