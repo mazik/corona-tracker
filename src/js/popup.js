@@ -50,7 +50,7 @@ let init = () => {
         var attr = document.createAttribute("class");             // Create a "class" attribute
         attr.value = "country border border-solid " +
           "border-gray-300 -mt-px " +
-          "bg-gray-100 p-12px no-underline " +
+          "bg-gray-100 p-3px no-underline " +
           "text-sm text-gray-700 block " +
           "hover:bg-gray-300";                                    // Set the value of the class attribute
         li.setAttributeNode(attr);                                // append attribute to <li> element
@@ -142,7 +142,7 @@ let renderAffectedCountry = (countryCode, countryName) => {     // function defi
             doughnutlabel: {
               labels: [
                 {
-                  text: locationDeaths + locationConfirmed + locationRecovered,
+                  text: locationConfirmed,
                   font: {
                     size: '30',
                   },
@@ -164,7 +164,7 @@ let renderAffectedCountry = (countryCode, countryName) => {     // function defi
       statChart.data.datasets[0].data[0] = locationConfirmed;
       statChart.data.datasets[0].data[1] = locationRecovered;
       statChart.data.datasets[0].data[2] = locationDeaths;
-      statChart.options.plugins.doughnutlabel.labels[0].text = locationDeaths + locationConfirmed + locationRecovered;
+      statChart.options.plugins.doughnutlabel.labels[0].text = locationConfirmed;
       statChart.update();
     }
   })
