@@ -79,7 +79,7 @@ module.exports = {
       spacing: {
         '0px': '0px',
         '5px': '5px',
-        '12px': '12px',
+        '3px': '3px',
         '393px': '393px',
         '-200px': '-200px',
         '200px': '200px',
@@ -88,8 +88,8 @@ module.exports = {
     },
     inset: {
       '0': 0,
-      '3px': '3px',
-      '-25px': '-25px'
+      '14px': '14px',
+      '-35px': '-35px'
     }
   },
   variants: { // all the following default to ['responsive']
