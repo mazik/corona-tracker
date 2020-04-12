@@ -219,10 +219,8 @@ let filterCountry = () => {
     txtCode = li[i].getAttribute('data-code');
     if (txtValue.toUpperCase().indexOf(filter) > -1 || txtCode.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
-      console.log('lol')
     } else {
       li[i].style.display = "none";
-      console.log('lola')
     }
   }
 };
