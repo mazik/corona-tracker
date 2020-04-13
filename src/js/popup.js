@@ -39,6 +39,18 @@ let init = () => {
     .catch(error => alert(error));
   })
   .then(() => {
+    corona.global()                          
+    .then(data => {
+      const casesInChina = document.getElementById('cases-in-china');                             // render total confirmed cases in china
+      casesInChina.appendChild(document.createTextNode(data.confirmed.china.toLocaleString()));
+
+      const casesOutsideChina = document.getElementById('cases-outside-china');                        // render total confirmed cases on outside of china
+      casesOutsideChina.appendChild(document.createTextNode(data.confirmed.outsideChina.toLocaleString()));
+
+    }) 
+    .catch(error => alert(error));
+  })
+  .then(() => {
     country.all()                                                 // populating all countries in side panel
     .then(countries => {
       const countryListUL = document.getElementById('countryUL');
