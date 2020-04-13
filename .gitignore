@@ -127,3 +127,4 @@ dist/
 publish/
 key.pem
 package-lock.json
+.idea/

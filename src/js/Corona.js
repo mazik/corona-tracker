@@ -20,4 +20,19 @@ export default class Corona {
       throw new Error("Couldn't get the CORONAVIRUS information from your location");
     })
   }
+
+
+  // fetching from different source to get latest update
+  static todayGlobalWordometer() {
+    return fetch('https://corona.lmao.ninja/all')
+    .then(response => {
+      if (response.ok) {
+        return response.json().then(json => json)
+      }
+
+      throw new Error("Couldn't get global updates upto today")
+    })
+  }
+
 }
+

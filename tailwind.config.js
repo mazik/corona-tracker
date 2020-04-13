@@ -70,6 +70,27 @@ module.exports = {
       'running': 'running',
       'paused': 'paused',
     },
+    extend: {
+      transitionProperty: { // extending few more transition property
+        'height': 'height',
+        'spacing': 'margin, padding',
+        'slide-left': 'margin-right'
+      },
+      spacing: {
+        '0px': '0px',
+        '5px': '5px',
+        '3px': '3px',
+        '393px': '393px',
+        '-200px': '-200px',
+        '200px': '200px',
+        '21px': '21px',
+      }
+    },
+    inset: {
+      '0': 0,
+      '14px': '14px',
+      '-35px': '-35px'
+    }
   },
   variants: { // all the following default to ['responsive']
     animations: ['responsive'],
