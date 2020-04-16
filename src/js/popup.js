@@ -105,8 +105,8 @@ let renderAffectedCountry = (countryCode, countryName) => {     // function defi
     locationDeaths    = affected.deaths;                        // no of deaths (upto now)
     locationConfirmed = affected.cases;                         // no of confirmed cases
     locationRecovered = affected.recovered;                     // no of recovered cases
-    locationNewDeaths = affected.todayDeaths;                   // no of recovered cases
-    locationNewCases  = affected.todayCases;                    // no of recovered cases
+    locationNewDeaths = affected.todayDeaths;                   // no of new cases today
+    locationNewCases  = affected.todayCases;                    // no of new deaths today
 
   })
   .then(() => {
