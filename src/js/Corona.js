@@ -21,7 +21,6 @@ export default class Corona {
     })
   }
 
-
   // fetching from different source to get latest update
   static todayGlobalWordometer() {
     return fetch('https://corona.lmao.ninja/all')
@@ -34,5 +33,16 @@ export default class Corona {
     })
   }
 
+  // fetching from different source to get latest update of specific country
+  static todayLocationWordometer(countryCode) {
+    return fetch(`https://corona.lmao.ninja/countries/${countryCode.toLowerCase()}`)
+    .then(response => {
+      if (response.ok) {
+        return response.json().then(json => json)
+      }
+
+      throw new Error("Couldn't get global updates upto today")
+    })
+  }
 }
 
