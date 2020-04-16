@@ -8,6 +8,8 @@ let countryName;
 let locationDeaths;
 let locationConfirmed;
 let locationRecovered;
+let locationNewDeaths;
+let locationNewCases;
 let statChart;
 
 // bootstrap init definition
@@ -99,10 +101,12 @@ let init = () => {
 init();       // calling the strap to boot.
 
 let renderAffectedCountry = (countryCode, countryName) => {     // function definition to get specific country
-  corona.location(countryCode).then(affected => {               // get latest global information from wordometer source api
-    locationDeaths = affected.deaths.value;                     // no of deaths (upto now)
-    locationConfirmed = affected.confirmed.value;               // no of confirmed cases
-    locationRecovered = affected.recovered.value;               // no of recovered cases
+  corona.todayLocationWordometer(countryCode).then(affected => {               // get latest global information from wordometer source api
+    locationDeaths    = affected.deaths;                        // no of deaths (upto now)
+    locationConfirmed = affected.cases;                         // no of confirmed cases
+    locationRecovered = affected.recovered;                     // no of recovered cases
+    locationNewDeaths = affected.todayDeaths;                   // no of recovered cases
+    locationNewCases  = affected.todayCases;                    // no of recovered cases
 
   })
   .then(() => {
@@ -117,6 +121,12 @@ let renderAffectedCountry = (countryCode, countryName) => {     // function defi
 
     const currentLocationConfirmed = document.getElementById('location-confirmed');    // render number of confirmed cases
     currentLocationConfirmed.innerText = locationConfirmed;
+    
+    const currentLocationNewCases = document.getElementById('location-new-cases');    // render number of news cases today
+    currentLocationNewCases.innerText = locationNewCases;
+    
+    const currentLocationNewDeaths = document.getElementById('location-new-deaths');    // render number of new deaths today
+    currentLocationNewDeaths.innerText = locationNewDeaths;
   })
   .then(() => {
     if (statChart === undefined) {                              // check chart is already defined
