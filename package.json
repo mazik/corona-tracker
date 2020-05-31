@@ -1,6 +1,6 @@
 {
   "name": "corona-tracker",
-  "version": "1.2.0",
+  "version": "1.3",
   "description": "A Google Chrome extension for tracking CORONAVIRUS COVID-19 DATA",
   "main": "src/manifest.js",
   "repository": "https://github.com/mazik/corona-tracker",

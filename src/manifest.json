@@ -1,6 +1,6 @@
 {
   "name": "Corona Tracker",
-  "version": "1.2",
+  "version": "1.3",
   "description": "A Google Chrome extension for tracking CORONAVIRUS COVID-19 update",
   "manifest_version": 2,
   "browser_action": {
